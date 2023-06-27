@@ -19,12 +19,10 @@ def limpiar_data_set(data_frame):
     actualizar_columnas_nan = {"destacada": "Sin determinar", "financiamiento": "Sin asignar", "expediente_numero": "Sin expediente"}
 
     # Actualizacion del data set con las columnas que van a quedar en la exploracion de datos
-    data_frame = data_frame.fillna(value=actualizar_columnas_nan)    
+    data_frame = data_frame.fillna(value=actualizar_columnas_nan)
 
     # Actualiza el data set quitando los registros que contienen celdas vacías
     data_frame = data_frame.dropna()
-
-    print(data_frame.info())
 
     # Actualiza el data set eliminando los registros duplicados
     data_frame = data_frame.drop_duplicates()
